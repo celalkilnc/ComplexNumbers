@@ -9,7 +9,6 @@ class ComplexNum
 private:
 	int _reel;
 	int _imag;
-
 public:
 	void setReel(int r) { _reel = r; }
 	void setImag(int i) { _imag = i; }
