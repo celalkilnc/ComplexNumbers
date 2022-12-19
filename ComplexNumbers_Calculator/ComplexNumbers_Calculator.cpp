@@ -113,13 +113,12 @@ int main()
 	cmp1 = SetValue("1");
 	cmp2 = SetValue("2");
 
-	if (option != "5") //Operation control
-	{
+	if (option != "5"){ 
+		//Operation control
 		result = complexNum.ComplexNumTransaction(cmp1, cmp2, option);
 		result.print(" ");
 	}
-	else
-	{
+	else {
 		system("cls");
 		cmp1.Polar();
 	}
