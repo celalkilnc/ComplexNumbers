@@ -6,7 +6,6 @@ using namespace std;
 
 class ComplexNum
 {
-	//ComplexNum Class
 private:
 	int _reel;
 	int _imag;
@@ -20,17 +19,11 @@ public:
 	void print(string i)
 	{
 		if (_imag > 0)
-		{
-			cout << i << _reel << " + " << _imag << "i" << endl;
-		}
+			{ cout << i << _reel << " + " << _imag << "i" << endl;  }
 		else if (_imag < 0)
-		{
-			cout << i << _reel << " - " << _imag << "i" << endl;
-		}
+			{ cout << i << _reel << " - " << _imag << "i" << endl;  }
 		else
-		{
-			cout << i << _reel << endl;
-		}
+			{ cout << i << _reel << endl; }
 	}
 
 	ComplexNum ComplexNumTransaction(ComplexNum obj1, ComplexNum obj2, string operation)
@@ -61,7 +54,6 @@ public:
 
 	void Polar(ComplexNum object)
 	{
-		//Polar Notation
 		int reel = object.getReel(), imag = object.getImag();
 		double r = sqrt(reel * reel + imag * imag);
 		double Angle = reel / imag;
@@ -83,7 +75,6 @@ public:
 
 string MainMenuMethod()
 {
-	//Menu
 	system("cls");
 	string Options;
 
@@ -99,6 +90,7 @@ string MainMenuMethod()
 	cin >> Options;
 	return Options;
 }
+
 ComplexNum SetValue(string num)
 {
 	int reel, imag;
@@ -118,7 +110,6 @@ int main()
 	ComplexNum complexNum;
 	ComplexNum cmp1, cmp2, result;
 
-	//Methods
 	string option = MainMenuMethod();
 	cmp1 = SetValue("1");
 	cmp2 = SetValue("2");
@@ -140,8 +131,5 @@ int main()
 	cout << "If you want to terminate the program, press any key and click 'Enter'..." << endl;
 	cin >> Orientation;
 
-	if (Orientation == "0")
-	{
-		return main();
-	}
+	if (Orientation == "0") { return main(); }
 }
