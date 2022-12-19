@@ -17,12 +17,12 @@ public:
 
 	void print(string i)
 	{
-		if (_imag > 0)
-			{ cout << i << _reel << " + " << _imag << "i" << endl;  }
-		else if (_imag < 0)
-			{ cout << i << _reel << " - " << _imag << "i" << endl;  }
-		else
-			{ cout << i << _reel << endl; }
+		if (_imag > 0) {
+			cout << i << _reel << " + " << _imag << "i" << endl;  }
+		else if (_imag < 0) { 
+			cout << i << _reel << " - " << _imag << "i" << endl;  }
+		else { 
+			cout << i << _reel << endl; }
 	}
 
 	ComplexNum ComplexNumTransaction(ComplexNum obj1, ComplexNum obj2, string operation)
