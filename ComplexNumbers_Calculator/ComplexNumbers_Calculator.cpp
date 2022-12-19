@@ -53,9 +53,9 @@ public:
 		return compnum;
 	}
 
-	void Polar(ComplexNum object)
+	void Polar()
 	{
-		int reel = object.getReel(), imag = object.getImag();
+		int reel = _reel, imag = _imag;
 		double r = sqrt(reel * reel + imag * imag);
 		double Angle = reel / imag;
 
@@ -124,7 +124,7 @@ int main()
 	else
 	{
 		system("cls");
-		complexNum.Polar(cmp1);
+		cmp1.Polar();
 	}
 
 	string Orientation;
