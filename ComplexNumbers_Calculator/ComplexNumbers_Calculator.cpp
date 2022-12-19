@@ -13,8 +13,9 @@ private:
 public:
 	void setReel(int r) { _reel = r; }
 	void setImag(int i) { _imag = i; }
-	int getReel() { return _reel; }
-	int getImag() { return _imag; }
+	
+	int  getReel() { return _reel; }
+	int  getImag() { return _imag; }
 
 	void print(string i)
 	{
