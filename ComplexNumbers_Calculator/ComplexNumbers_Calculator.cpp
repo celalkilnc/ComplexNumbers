@@ -115,10 +115,8 @@ string MainMenuMethod()
 {
 	system("cls");
 	string options;
-
-	cout << "Hello ," << endl;
+	
 	cout << "Please choose one of the options : " << endl;
-
 	cout << "1- Addition : " << endl;
 	cout << "2- Extraction process : " << endl;
 	cout << "3- Division : " << endl;
