@@ -99,7 +99,6 @@ ComplexNum ComplexNumTransaction(ComplexNum obj1, ComplexNum obj2, string operat
 	return compnum;
 }
 
-
 ComplexNum SetValue(string num)
 {
 	int reel, imag;
