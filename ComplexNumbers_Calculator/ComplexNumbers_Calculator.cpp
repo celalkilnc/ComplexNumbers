@@ -25,32 +25,6 @@ public:
 			cout << i << _reel << endl; }
 	}
 
-	ComplexNum ComplexNumTransaction(ComplexNum obj1, ComplexNum obj2, string operation)
-	{
-		/*  1- Addition  2- Extraction  3- Division  4- Multiplation */
-
-		ComplexNum compnum;
-		if (operation == "1") {
-			compnum.setReel(obj1.getReel() + obj2.getReel());
-			compnum.setImag(obj1.getImag() + obj2.getImag());
-		}
-		else if (operation == "2") {
-			compnum.setReel(obj1.getReel() - obj2.getReel());
-			compnum.setImag(obj1.getImag() - obj2.getImag());
-		}
-		else if (operation == "3") {
-			float reelsayi = obj1.getReel() * obj2.getReel() + obj1.getImag() * obj2.getImag();
-			compnum.setReel(((obj1.getReel() * obj2.getReel()) - obj1.getImag() * (-1 * obj2.getReel()) / reelsayi));
-			compnum.setImag(((obj1.getReel() * (-1 * obj2.getImag()) + obj1.getImag() * obj2.getReel()) / reelsayi));
-		}
-		else if (operation == "4") {
-			compnum.setReel(obj1.getReel() * obj2.getReel());
-			int aritmethic = (obj2.getImag() * obj1.getImag()) + (obj2.getReel() * obj1.getImag()) + (obj1.getReel() * obj2.getImag());
-			compnum.setImag(aritmethic);
-		}
-		return compnum;
-	}
-
 	void Polar()
 	{
 		int reel = _reel, imag = _imag;
@@ -71,38 +45,6 @@ public:
 		cout << "Polar value : " << r << "(" << cos(Angle) << " Pi  +  " << sin(Angle) << "i Pi)" << endl << endl;
 	}
 };
-
-string MainMenuMethod()
-{
-	system("cls");
-	string Options;
-
-	cout << "Hello ," << endl;
-	cout << "Please choose one of the options : " << endl;
-
-	cout << "1- Addition : " << endl;
-	cout << "2- Extraction process : " << endl;
-	cout << "3- Division : " << endl;
-	cout << "4- Multiplication : " << endl;
-	cout << "5- Polar value of complex number : " << endl;
-
-	cin >> Options;
-	return Options;
-}
-
-ComplexNum SetValue(string num)
-{
-	int reel, imag;
-	ComplexNum comp;
-
-	cout << "Please enter reel for " + num + ". Complex num: "; cin >> reel;
-	cout << "Please enter imag for " + num + ". Complex num: "; cin >> imag;
-
-	comp.setReel(reel);
-	comp.setImag(imag);
-
-	return comp;
-}
 
 int main()
 {
@@ -129,4 +71,63 @@ int main()
 	cin >> Orientation;
 
 	if (Orientation == "0") { return main(); }
+}
+
+ComplexNum ComplexNumTransaction(ComplexNum obj1, ComplexNum obj2, string operation)
+{
+	/*  1- Addition  2- Extraction  3- Division  4- Multiplation */
+
+	ComplexNum compnum;
+	if (operation == "1") {
+		compnum.setReel(obj1.getReel() + obj2.getReel());
+		compnum.setImag(obj1.getImag() + obj2.getImag());
+	}
+	else if (operation == "2") {
+		compnum.setReel(obj1.getReel() - obj2.getReel());
+		compnum.setImag(obj1.getImag() - obj2.getImag());
+	}
+	else if (operation == "3") {
+		float reelsayi = obj1.getReel() * obj2.getReel() + obj1.getImag() * obj2.getImag();
+		compnum.setReel(((obj1.getReel() * obj2.getReel()) - obj1.getImag() * (-1 * obj2.getReel()) / reelsayi));
+		compnum.setImag(((obj1.getReel() * (-1 * obj2.getImag()) + obj1.getImag() * obj2.getReel()) / reelsayi));
+	}
+	else if (operation == "4") {
+		compnum.setReel(obj1.getReel() * obj2.getReel());
+		int aritmethic = (obj2.getImag() * obj1.getImag()) + (obj2.getReel() * obj1.getImag()) + (obj1.getReel() * obj2.getImag());
+		compnum.setImag(aritmethic);
+	}
+	return compnum;
+}
+
+
+ComplexNum SetValue(string num)
+{
+	int reel, imag;
+	ComplexNum comp;
+
+	cout << "Please enter reel for " + num + ". Complex num: "; cin >> reel;
+	cout << "Please enter imag for " + num + ". Complex num: "; cin >> imag;
+
+	comp.setReel(reel);
+	comp.setImag(imag);
+
+	return comp;
+}
+
+string MainMenuMethod()
+{
+	system("cls");
+	string Options;
+
+	cout << "Hello ," << endl;
+	cout << "Please choose one of the options : " << endl;
+
+	cout << "1- Addition : " << endl;
+	cout << "2- Extraction process : " << endl;
+	cout << "3- Division : " << endl;
+	cout << "4- Multiplication : " << endl;
+	cout << "5- Polar value of complex number : " << endl;
+
+	cin >> Options;
+	return Options;
 }
