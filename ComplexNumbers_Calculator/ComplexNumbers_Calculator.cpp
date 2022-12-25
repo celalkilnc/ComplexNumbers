@@ -45,7 +45,6 @@ public:
 
 int main()
 {
-	ComplexNum complexNum;
 	ComplexNum cmp1, cmp2, result;
 
 	string option = MainMenuMethod();
