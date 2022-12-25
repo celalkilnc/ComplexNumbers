@@ -15,14 +15,11 @@ public:
 	int  getReel() { return _reel; }
 	int  getImag() { return _imag; }
 
-	void print(string i)
+	void print()
 	{
-		if (_imag > 0) {
-			cout << i << _reel << " + " << _imag << "i" << endl;  }
-		else if (_imag < 0) { 
-			cout << i << _reel << " - " << _imag << "i" << endl;  }
-		else { 
-			cout << i << _reel << endl; }
+		if      (_imag > 0) { cout << _reel << " + " << _imag << "i" << endl; }
+		else if (_imag < 0) { cout << _reel << " - " << _imag << "i" << endl; }
+		else 		    { cout << _reel << endl; }
 	}
 
 	void Polar()
@@ -57,27 +54,27 @@ int main()
 
 	if (option != "5"){ 
 		//Operation control
-		result = complexNum.ComplexNumTransaction(cmp1, cmp2, option);
-		result.print(" ");
+		result = ComplexNumTransaction(cmp1, cmp2, option);
+		result.print();
 	}
 	else {
 		system("cls");
 		cmp1.Polar();
 	}
 
-	string Orientation;
+	string orientation;
 	cout << "Please press '0' to return to the previous menu...." << endl;
 	cout << "If you want to terminate the program, press any key and click 'Enter'..." << endl;
-	cin >> Orientation;
+	cin >> orientation;
 
-	if (Orientation == "0") { return main(); }
+	if (orientation == "0") { return main(); }
 }
 
 ComplexNum ComplexNumTransaction(ComplexNum obj1, ComplexNum obj2, string operation)
 {
 	/*  1- Addition  2- Extraction  3- Division  4- Multiplation */
-
 	ComplexNum compnum;
+	
 	if (operation == "1") {
 		compnum.setReel(obj1.getReel() + obj2.getReel());
 		compnum.setImag(obj1.getImag() + obj2.getImag());
@@ -116,7 +113,7 @@ ComplexNum SetValue(string num)
 string MainMenuMethod()
 {
 	system("cls");
-	string Options;
+	string options;
 
 	cout << "Hello ," << endl;
 	cout << "Please choose one of the options : " << endl;
@@ -127,6 +124,6 @@ string MainMenuMethod()
 	cout << "4- Multiplication : " << endl;
 	cout << "5- Polar value of complex number : " << endl;
 
-	cin >> Options;
-	return Options;
+	cin >> options;
+	return options;
 }
