@@ -70,6 +70,7 @@ int main()
 	if (orientation == "0") { return main(); }
 }
 
+// Methods
 ComplexNum ComplexNumTransaction(ComplexNum obj1, ComplexNum obj2, string operation)
 {
 	/*  1- Addition  2- Extraction  3- Division  4- Multiplation */
