@@ -3,6 +3,33 @@
 #include <iostream>
 
 using namespace std;
+int main()
+{
+	ComplexNum cmp1, cmp2, result;
+
+	string option = MainMenuMethod();
+	cmp1 = SetValue("1");
+	cmp2 = SetValue("2");
+
+	if (option != "5"){ 
+		//Operation control
+		result = ComplexNumTransaction(cmp1, cmp2, option);
+		result.print();
+	}
+	else {
+		system("cls");
+		cmp1.Polar();
+	}
+
+	string orientation;
+	cout << "Please press '0' to return to the previous menu...." << endl;
+	cout << "If you want to terminate the program, press any key and click 'Enter'..." << endl;
+	cin >> orientation;
+
+	if (orientation == "0") { return main(); }
+}
+
+// Classes
 class ComplexNum
 {
 private:
@@ -42,32 +69,6 @@ public:
 		cout << "Polar value : " << r << "(" << cos(Angle) << " Pi  +  " << sin(Angle) << "i Pi)" << endl << endl;
 	}
 };
-
-int main()
-{
-	ComplexNum cmp1, cmp2, result;
-
-	string option = MainMenuMethod();
-	cmp1 = SetValue("1");
-	cmp2 = SetValue("2");
-
-	if (option != "5"){ 
-		//Operation control
-		result = ComplexNumTransaction(cmp1, cmp2, option);
-		result.print();
-	}
-	else {
-		system("cls");
-		cmp1.Polar();
-	}
-
-	string orientation;
-	cout << "Please press '0' to return to the previous menu...." << endl;
-	cout << "If you want to terminate the program, press any key and click 'Enter'..." << endl;
-	cin >> orientation;
-
-	if (orientation == "0") { return main(); }
-}
 
 // Methods
 ComplexNum ComplexNumTransaction(ComplexNum obj1, ComplexNum obj2, string operation)
