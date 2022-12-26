@@ -73,7 +73,7 @@ public:
 // Methods
 ComplexNum ComplexNumTransaction(ComplexNum obj1, ComplexNum obj2, string operation)
 {
-	/*  1- Addition  2- Extraction  3- Division  4- Multiplation */
+	/* 1- Addition  2- Extraction  3- Division  4- Multiplation */
 	ComplexNum compnum;
 	
 	if (operation == "1") {
