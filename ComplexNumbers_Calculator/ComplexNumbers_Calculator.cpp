@@ -42,7 +42,7 @@ public:
 	int  getReel() { return _reel; }
 	int  getImag() { return _imag; }
 
-	void print()
+	void print() //print to complex number type
 	{
 		if (_imag > 0) 
 		     { cout << _reel << " + " << _imag << "i" << endl; }
