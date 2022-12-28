@@ -44,9 +44,12 @@ public:
 
 	void print()
 	{
-		if      (_imag > 0) { cout << _reel << " + " << _imag << "i" << endl; }
-		else if (_imag < 0) { cout << _reel << " - " << _imag << "i" << endl; }
-		else 		    { cout << _reel << endl; }
+		if (_imag > 0) 
+		     { cout << _reel << " + " << _imag << "i" << endl; }
+		else if (_imag < 0) 
+		     { cout << _reel << " - " << _imag << "i" << endl; }
+		else 		    
+		     { cout << _reel << endl; }
 	}
 
 	void Polar()
