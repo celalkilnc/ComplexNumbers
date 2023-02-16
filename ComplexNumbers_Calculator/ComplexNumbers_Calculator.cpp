@@ -78,23 +78,25 @@ ComplexNum ComplexNumTransaction(ComplexNum obj1, ComplexNum obj2, string operat
 {
 	/* 1- Addition  2- Extraction  3- Division  4- Multiplation */
 	ComplexNum compnum;
+	int obj1Reel = obj1.getReel(), obj2Reel = obj2.getReel(), obj1Imag = obj1.getImag(), obj2Imag = obj2.getImag();
+	
 	
 	if (operation == "1") {
-		compnum.setReel(obj1.getReel() + obj2.getReel());
-		compnum.setImag(obj1.getImag() + obj2.getImag());
+		compnum.setReel(obj1Reel + obj2Reel);
+		compnum.setImag(obj1Imag + obj2.getImag());
 	}
 	else if (operation == "2") {
-		compnum.setReel(obj1.getReel() - obj2.getReel());
-		compnum.setImag(obj1.getImag() - obj2.getImag());
+		compnum.setReel(obj1Reel - obj2Reel);
+		compnum.setImag(obj1Imag - obj2Imag);
 	}
 	else if (operation == "3") {
-		float reelsayi = obj1.getReel() * obj2.getReel() + obj1.getImag() * obj2.getImag();
-		compnum.setReel(((obj1.getReel() * obj2.getReel()) - obj1.getImag() * (-1 * obj2.getReel()) / reelsayi));
-		compnum.setImag(((obj1.getReel() * (-1 * obj2.getImag()) + obj1.getImag() * obj2.getReel()) / reelsayi));
+		float reelsayi = obj1Reel * obj2Reel + obj1Imag * obj2.getImag();
+		compnum.setReel(((obj1Reel * obj2Reel) - obj1Imag * (-1 * obj2Reel) / reelsayi));
+		compnum.setImag(((obj1Reel * (-1 * obj2Imag) + obj1Imag * obj2Reel) / reelsayi));
 	}
 	else if (operation == "4") {
-		compnum.setReel(obj1.getReel() * obj2.getReel());
-		int aritmethic = (obj2.getImag() * obj1.getImag()) + (obj2.getReel() * obj1.getImag()) + (obj1.getReel() * obj2.getImag());
+		compnum.setReel(obj1Reel * obj2Reel);
+		int aritmethic = (obj2.getImag() * obj1Imag) + (obj2Reel * obj1Imag) + (obj1Reel * obj2Imag);
 		compnum.setImag(aritmethic);
 	}
 	return compnum;
